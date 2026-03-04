@@ -135,19 +135,34 @@ int main(void)
     // printf("%lf\n",cena_p *obshto_p);
 
     //12zad
-    int n;
-    double m, kurs;
+    // int n;
+    // double m, kurs;
+    //
+    // scanf("%d", &n);
+    // scanf("%lf", &m);
+    // scanf("%lf", &kurs);
+    //
+    // double zaplata = n * m;
+    // double godishen_dohod = (zaplata * 12) + (zaplata * 2.5);
+    // double chista_suma = godishen_dohod * 0.75;
+    // double v_leva = chista_suma * kurs;
+    // double sredno_na_den = v_leva / 365;
+    //
+    // printf("%.2f\n", sredno_na_den);
 
-    scanf("%d", &n);
-    scanf("%lf", &m);
-    scanf("%lf", &kurs);
 
-    double zaplata = n * m;
-    double godishen_dohod = (zaplata * 12) + (zaplata * 2.5);
-    double chista_suma = godishen_dohod * 0.75;
-    double v_leva = chista_suma * kurs;
-    double sredno_na_den = v_leva / 365;
+    //20ta zad
+    char sym;
 
-    printf("%.2f\n", sredno_na_den);
+    printf("Enter a character: ");
+    scanf("%c", &sym);
+
+    char prev = sym - 1;
+    char next = sym + 1;
+
+    printf("Previous: %c\n", prev);
+    printf("Next: %c\n", next);
+
+
 
 }
