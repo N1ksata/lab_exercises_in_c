@@ -1,13 +1,45 @@
 #include <stdio.h>
-#include <string.h>
 
-int main(void)
+int main()
 {
-    char name[50];
+    double beg;
+    double end;
+    double delta;
+    double m;
+    double a;
+    double b;
 
-    printf("Enter your name: ");
-    fgets(name , sizeof(name), stdin);
-    name[strcspn(name, "\n")] = 0; //removes the \n in the end , in func fgets!!
-    printf("%s , nice to meet you!", name);
+    scanf("%lf", &beg);
+    scanf("%lf", &end);
+    scanf("%lf", &delta);
+    scanf("%lf", &m);
+    scanf("%lf", &a);
+    scanf("%lf", &b);
 
+    if (beg > end)
+    {
+        printf("Enter new beg:");
+        scanf("%lf", &beg);
+        printf("Enter new end:");
+        scanf("%lf", &end);
+    }
+
+    if (m > end || m < beg)
+    {
+        printf("Enter new m:");
+        scanf("%lf", &m);
+    }
+
+    for (double x = beg; x < end; x += delta)
+    {
+        if (x <= m)
+        {
+            printf("%.2lf\n", b + x);
+        }
+        else
+        {
+            printf("%.2lf\n", a * x / (4 - x));
+        }
+    }
+    return 0;
 }
