@@ -16,30 +16,31 @@ int main()
     scanf("%lf", &a);
     scanf("%lf", &b);
 
-    if (beg > end)
-    {
-        printf("Enter new beg:");
-        scanf("%lf", &beg);
-        printf("Enter new end:");
+    while (end <= beg) {
+        printf("End must be greater than beg. Enter new end: ");
         scanf("%lf", &end);
     }
 
-    if (m > end || m < beg)
-    {
-        printf("Enter new m:");
+    if (m >= beg && m <= end) {
+        printf("M is fine:");
+    }
+    else {
+        printf("M is not fine,enter new m:");
         scanf("%lf", &m);
     }
 
-    for (double x = beg; x < end; x += delta)
-    {
-        if (x <= m)
-        {
-            printf("%.2lf\n", b + x);
+    for (double x = beg; x <= end; x += delta) {
+        if (x <= m) {
+            printf("%.2lf", b+x);
         }
-        else
-        {
-            printf("%.2lf\n", a * x / (4 - x));
+        else {
+            if (4 - x==0) {
+                continue;
+            }
+            printf("%.2lf", (a*x)/(4-x));
         }
     }
+
+
     return 0;
 }
