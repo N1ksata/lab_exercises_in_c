@@ -7,9 +7,14 @@
 //
 // }
 
-double inchtomm(double x) {
-    double a = x*25.4;
-    return a;
+// double inchtomm(double x) {
+//     double a = x*25.4;
+//     return a;
+// }
+
+double milestokms(double miles) {
+    double kms = miles *1.60943;
+    return kms;
 }
 
 int main()
@@ -22,10 +27,16 @@ int main()
 
     //zadacha 202
     //inches to mm
-    double inch;
-    scanf("%lf", &inch);
-    printf("%.1lf", inchtomm(inch));
+    // double inch;
+    // scanf("%lf", &inch);
+    // printf("%.1lf", inchtomm(inch));
 
+    //zad 203
+    //miles to km
+    //1 mile = 1.60094
 
+    double mile;
+    scanf("%lf", &mile);
+    printf("%.3lf", milestokms(mile));
 
 }
