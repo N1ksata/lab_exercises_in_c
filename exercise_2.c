@@ -12,9 +12,13 @@
 //     return a;
 // }
 
-double milestokms(double miles) {
-    double kms = miles *1.60943;
-    return kms;
+// double milestokms(double miles) {
+//     double kms = miles *1.60943;
+//     return kms;
+// }
+
+double obem_cilinder(double x, double y) {
+    return 3.14*x*x*y;
 }
 
 int main()
@@ -35,8 +39,18 @@ int main()
     //miles to km
     //1 mile = 1.60094
 
-    double mile;
-    scanf("%lf", &mile);
-    printf("%.3lf", milestokms(mile));
+    // double mile;
+    // scanf("%lf", &mile);
+    // printf("%.3lf", milestokms(mile));
+
+
+    //205 obem na cilinder
+    double r,h;
+    scanf("%lf",&r);
+    scanf("%lf",&h);
+    printf("%.2lf",obem_cilinder(r,h));
+
+
+
 
 }
