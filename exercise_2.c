@@ -60,12 +60,12 @@
 //     return  (chislo * procent)/100;
 // }
 
-unsigned long long findFactorial(int n) {
-    if (n <=1) {
-        return 1;
-    }
-    return n * findFactorial(n - 1);
-}
+// unsigned long long findFactorial(int n) {
+//     if (n <=1) {
+//         return 1;
+//     }
+//     return n * findFactorial(n - 1);
+// }
 
 int main()
 {
@@ -113,9 +113,9 @@ int main()
     //209 chislo v procent
     //210 factoriel
 
-    int number = 5;
-    printf("%d", findFactorial(number));
-    return 0;
+    // int number = 5;
+    // printf("%d", findFactorial(number));
+    // return 0;
 
 
 }
