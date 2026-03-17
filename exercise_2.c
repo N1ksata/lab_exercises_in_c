@@ -67,6 +67,11 @@
 //     return n * findFactorial(n - 1);
 // }
 
+// void profit(int a,int b,int c) {
+//     printf("%d",a*b*c/100);
+// }
+
+
 int main()
 {
     //zadacha 201
@@ -111,11 +116,17 @@ int main()
 
     //208 namirane na suprotivlenie na veriga
     //209 chislo v procent
-    //210 factoriel
 
+    //210 factoriel
     // int number = 5;
     // printf("%d", findFactorial(number));
     // return 0;
+
+    //211 profit
+    // int deposit, interest_rate ,depsite_term;
+    // scanf("%d%d%d", &deposit, &interest_rate, &depsite_term);
+    // profit(deposit, interest_rate, depsite_term);
+
 
 
 }
