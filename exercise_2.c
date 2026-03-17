@@ -68,7 +68,7 @@
 // }
 
 // void profit(int a,int b,int c) {
-//     printf("%d",a*b*c/100);
+//     printf("%d",a*(b /100/365)*c;
 // }
 
 
