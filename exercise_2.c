@@ -71,12 +71,12 @@
 //     printf("%d",a*(b /100/365)*c;
 // }
 
-float circle_area(float r ) {
-    return 3.14 * r * r;
-}
-float rectangle_area(float a,float b) {
-    return  a * b;
-}
+// float circle_area(float r ) {
+//     return 3.14 * r * r;
+// }
+// float rectangle_area(float a,float b) {
+//     return  a * b;
+// }
 
 int main()
 {
@@ -135,28 +135,44 @@ int main()
 
     //exercises from net
     //1 geometry
-    int choice;
-    printf("You can choose between -> 1 for the area of circle\n");
-    printf("                       -> 2 for the area of rectangle\n");
-    scanf("%d", &choice);
+    // int choice;
+    // printf("You can choose between -> 1 for the area of circle\n");
+    // printf("                       -> 2 for the area of rectangle\n");
+    // scanf("%d", &choice);
+    //
+    // if (choice == 1) {
+    //     printf("CIRCLE:\n");
+    //     printf("Choose r:\n");
+    //     int r;
+    //     scanf("%d", &r);
+    //     printf("The area of circle is %f\n", circle_area(r));
+    // }
+    // else if (choice == 2) {
+    //     float a,b;
+    //     printf("Rectangle:\n");
+    //     printf("Choose a and b :\n");
+    //     scanf("%f %f", &a, &b);
+    //     printf("The area of circle is %f\n", rectangle_area(a,b));
+    // }
+    // else {
+    //     printf("Choose proper number 1 or 2");
+    // }
 
-    if (choice == 1) {
-        printf("CIRCLE:\n");
-        printf("Choose r:\n");
-        int r;
-        scanf("%d", &r);
-        printf("The area of circle is %f\n", circle_area(r));
-    }
-    else if (choice == 2) {
-        float a,b;
-        printf("Rectangle:\n");
-        printf("Choose a and b :\n");
-        scanf("%f %f", &a, &b);
-        printf("The area of circle is %f\n", rectangle_area(a,b));
-    }
-    else {
-        printf("Choose proper number 1 or 2");
-    }
+    //exercises with for cylce
 
 
+    //reversed loop
+    // int a;
+    // scanf("%d", &a);
+    // for (int i = a ; i>=1 ; i--) {
+    //     printf("%d\n", i);
+    // }
+
+    //nested loops
+
+    for (int i= 0 ; i<=10 ;i++) {
+        for (int j= 0 ; j<=10; j++) {
+            printf("%d x %d = %d\n", i,j,i*j);
+        }
+    }
 }
