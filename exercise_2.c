@@ -176,16 +176,5 @@ int main()
     //     }
     // }
 
-    //zad 9
-    // double x,y,z,rabotnici;
-    // printf("x y z \n");
-    // scanf("%lf %lf %lf",&x,&y,&z,&rabotnici);
-    // double obshto_grozde  = x *y;
-    // double grozde_vino  = obshto_grozde * 0.40;
-    // double izraboteno_vino = grozde_vino / 2.5;
-    //
-    // if (izraboteno_vino >= z) {
-    //     double ostavashto  = izraboteno_vino -z;
-    // }
 
 }

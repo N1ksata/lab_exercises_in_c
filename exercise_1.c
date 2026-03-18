@@ -72,8 +72,6 @@ int main()
     //      bonus += cqlo *0.2;
     //  }
     //
-    //
-    //
     // if (cqlo % 2 ==0) {
     //      bonus += 1.0;
     //  }
@@ -203,7 +201,6 @@ int main()
         }
         printf("\n");
     }
-
     //sreda na tqloto
     for (int i = 0; i < n - 1; i++) printf(" ");
     printf("@\n");
