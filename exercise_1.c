@@ -184,43 +184,142 @@ int main()
     // printf("%.2lf\n",(p5/n)*100);
 
     //12zad
-    int n;
-    scanf("%d", &n);
+    // int n;
+    // scanf("%d", &n);
+    //
+    // for (int i = 1; i <= n - 2; i++) {
+    //     if (i % 2 != 0) {
+    //         //necheten red
+    //         for(int j=0; j < n-2; j++) printf("*");
+    //         printf("\\ /");
+    //         for(int j=0; j < n-2; j++) printf("*");
+    //     } else {
+    //         //cheten
+    //         for(int j=0; j < n-2; j++) printf("-");
+    //         printf("\\ /");
+    //         for(int j=0; j < n-2; j++) printf("-");
+    //     }
+    //     printf("\n");
+    // }
+    // //sreda na tqloto
+    // for (int i = 0; i < n - 1; i++) printf(" ");
+    // printf("@\n");
+    //
+    // //dolna ogledalna na gorna
+    // for (int i = 1; i <= n - 2; i++) {
+    //     if (i % 2 != 0) {
+    //         //cheten red
+    //         for(int j=0; j < n-2; j++) printf("*");
+    //         printf("/ \\");
+    //         for(int j=0; j < n-2; j++) printf("*");
+    //     } else {
+    //         // cheten red
+    //         for(int j=0; j < n-2; j++) printf("-");
+    //         printf("/ \\");
+    //         for(int j=0; j < n-2; j++) printf("-");
+    //     }
+    //     printf("\n");
+    // }
 
-    for (int i = 1; i <= n - 2; i++) {
-        if (i % 2 != 0) {
-            //necheten red
-            for(int j=0; j < n-2; j++) printf("*");
-            printf("\\ /");
-            for(int j=0; j < n-2; j++) printf("*");
-        } else {
-            //cheten
-            for(int j=0; j < n-2; j++) printf("-");
-            printf("\\ /");
-            for(int j=0; j < n-2; j++) printf("-");
-        }
-        printf("\n");
+
+    // int n[10];
+    // for (int i=1; i<=10; i++) {
+    //     n[i-1]=i*2;
+    // }
+    //
+    // for (int i=0; i<10; i++) {
+    //     printf("%d\n",n[i]);
+    // }
+
+    // int arr[5],i;
+    // printf("Size of ints in this com is %lu\n", sizeof(int));
+    // for (i=0;i<5;i++) {
+    //     printf("Adress arr[%d] is %p\n",i,&arr[i]);
+    // }
+
+    // int arr[]= {10,20,30,40,50,60};
+    // int* ptr = arr;
+    // printf("Size of arr[] %ld\n",sizeof(arr));
+    // printf("Size of arr[] %ld\n",sizeof(ptr));
+
+    // double a[5];
+    //
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     printf("\na[%i] ->",i);
+    //     scanf("%lf",&a[i]);
+    // }
+    //
+    // for (int i = 0; i < 5; i++) {
+    //     printf("%.2lf\n",a[i]);
+    // }
+
+    // char greeting[6]= {'N', 'i', 'k', 'i','\0'};
+    // char greeting1[6]= {'K', 'o', 'l', 'e', 'v','\0'};
+    // printf("The greeting is %s %s\n",greeting , greeting1);
+
+    // char name[30];
+    // printf("Enter your name: ");
+    // // scanf("%s",name); //fgets
+    // fgets(name,40,stdin);
+    // // printf("Hello %s zaaz",name); //puts
+    // printf("Your name is: ");
+    // puts(name);
+    // printf("!");
+
+    //zad1
+    // char name[] = "Nikolay";
+    // int length =0;
+    // for (int i = 0; name[i] != '\0'; i++)
+    // {
+    //     length++;
+    // }
+    // printf("%d", length);
+
+    //zad2
+    // int length = 1;
+    // char words[300] = {"NIKOLAY E SMESHEN"};
+    // for (int i = 0; words[i] != '\0'; i++) {
+    //     if (words[i] == ' ') {
+    //         length++;
+    //     }
+    // }
+    // printf("%d\n", length);
+    // return 0;
+
+    //zad3
+    // int len = 0;
+    // char ch;
+    // char words[10] = {"Birds"};
+    // for (int i = 0; words[i] != '\0'; i++) {
+    //     if (words[i] == 'B') {
+    //         len++;
+    //     }
+    // }
+    // printf("%d\n", len);
+
+    //zad4
+    char name[] = "Nikolay";
+    char name2[] = "Kolew";
+    int length =0;
+    int length1 =0;
+    for (int i = 0; name[i] != '\0'; i++)
+    {
+        length++;
     }
-    //sreda na tqloto
-    for (int i = 0; i < n - 1; i++) printf(" ");
-    printf("@\n");
-
-    //dolna ogledalna na gorna
-    for (int i = 1; i <= n - 2; i++) {
-        if (i % 2 != 0) {
-            //cheten red
-            for(int j=0; j < n-2; j++) printf("*");
-            printf("/ \\");
-            for(int j=0; j < n-2; j++) printf("*");
-        } else {
-            // cheten red
-            for(int j=0; j < n-2; j++) printf("-");
-            printf("/ \\");
-            for(int j=0; j < n-2; j++) printf("-");
-        }
-        printf("\n");
+    for (int i = 0; name2[i] != '\0'; i++)
+    {
+        length1++;
+    }
+    if (length == length1) {
+        printf("TOHCNI RAZMERI");
+    }
+    else if(length > length1) {
+        printf("NIKOLAY PECHELI");
+    }
+    else {
+        printf("KOLEW PECHELI");
     }
 
     return 0;
-
 }

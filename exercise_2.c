@@ -133,6 +133,7 @@ int main()
     // scanf("%d%d%d", &deposit, &interest_rate, &depsite_term);
     // profit(deposit, interest_rate, depsite_term);
 
+
     //exercises from net
     //1 geometry
     // int choice;
