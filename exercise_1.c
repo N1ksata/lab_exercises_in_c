@@ -299,27 +299,26 @@ int main()
     // printf("%d\n", len);
 
     //zad4
-    char name[] = "Nikolay";
-    char name2[] = "Kolew";
-    int length =0;
-    int length1 =0;
-    for (int i = 0; name[i] != '\0'; i++)
-    {
-        length++;
-    }
-    for (int i = 0; name2[i] != '\0'; i++)
-    {
-        length1++;
-    }
-    if (length == length1) {
-        printf("TOHCNI RAZMERI");
-    }
-    else if(length > length1) {
-        printf("NIKOLAY PECHELI");
-    }
-    else {
-        printf("KOLEW PECHELI");
-    }
-
-    return 0;
+    // char name[] = "Nikolay";
+    // char name2[] = "Kolew";
+    // int length =0;
+    // int length1 =0;
+    // for (int i = 0; name[i] != '\0'; i++)
+    // {
+    //     length++;
+    // }
+    // for (int i = 0; name2[i] != '\0'; i++)
+    // {
+    //     length1++;
+    // }
+    // if (length == length1) {
+    //     printf("TOHCNI RAZMERI");
+    // }
+    // else if(length > length1) {
+    //     printf("NIKOLAY PECHELI");
+    // }
+    // else {
+    //     printf("KOLEW PECHELI");
+    // }
+    // return 0;
 }
