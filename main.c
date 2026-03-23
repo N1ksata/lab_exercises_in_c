@@ -3,9 +3,7 @@
 
 int main()
 {
-
     //18.03 lab
-
     //1va    suma na 7 chisla
     // int arr[7];
     //int sum = 0;
@@ -62,6 +60,17 @@ int main()
     //         printf("arr[%d] = %d\n", i, arr[i]);
     //     }
     // }
+
+    int a,b;
+    int* p1 = &a;
+    int* p2 = &b;
+
+    scanf("%d%d",&a,&b);
+
+    printf("%d\n", *p1 + *p2);
+    printf("%d\n", *p1 - *p2);
+    printf("%d\n", *p1 * *p2);
+    printf("%d\n", *p1 / *p2);
 
 
 
