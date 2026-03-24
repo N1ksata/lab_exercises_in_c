@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+
 
 int main()
 {
@@ -61,19 +63,82 @@ int main()
     //     }
     // }
 
-    int a,b;
-    int* p1 = &a;
-    int* p2 = &b;
+    // int a,b;
+    // int* p1 = &a;
+    // int* p2 = &b;
+    //
+    // scanf("%d%d",&a,&b);
+    //
+    // printf("+ ->%d\n", *p1 + *p2);
+    // printf("- ->%d\n", *p1 - *p2);
+    // printf("* ->%d\n", *p1 * *p2);
+    // if (*p2 != 0)
+    // {
+    //     printf("/ ->%d\n", *p1 / *p2);
+    // }
+    // else
+    // {
+    //     printf("ZeroDivision ERROR\n");
+    // }
 
-    scanf("%d%d",&a,&b);
+    // int n, i, j;
+    // printf("Enter the size of the nxn matrix: ");
+    // if (scanf("%d", &n) != 1 || n <= 0) {
+    //     printf("Invalid size. Please enter a positive integer.\n");
+    //     return 1;
+    // }
+    //
+    // int **matrix = (int **)malloc(n * sizeof(int *));
+    // if (matrix == NULL) {
+    //     printf("Memory allocation failed!\n");
+    //     return 1;
+    // }
+    //
+    // for (i = 0; i < n; i++) {
+    //     matrix[i] = (int *)malloc(n * sizeof(int));
+    //     if (matrix[i] == NULL) {
+    //         printf("Memory allocation failed!\n");
+    //         return 1;
+    //     }
+    // }
+    //
+    // printf("\nEnter %d elements for the %dx%d matrix:\n", n * n, n, n);
+    // for (i = 0; i < n; i++) {
+    //     for (j = 0; j < n; j++) {
+    //         printf("Element [%d][%d]: ", i, j);
+    //         scanf("%d", &matrix[i][j]);
+    //     }
+    // }
+    //
+    // printf("\n--- Resulting %dx%d Matrix ---\n", n, n);
+    // for (i = 0; i < n; i++) {
+    //     for (j = 0; j < n; j++) {
+    //         printf("%d\t", matrix[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+    //
+    // for (i = 0; i < n; i++) {
+    //     free(matrix[i]);
+    // }
+    // free(matrix);
+    // printf("\nMemory freed. Program exiting.\n");
+    // return 0;
 
-    printf("%d\n", *p1 + *p2);
-    printf("%d\n", *p1 - *p2);
-    printf("%d\n", *p1 * *p2);
-    printf("%d\n", *p1 / *p2);
-
-
-
-
-    return 0;
+    //Write a program that prints numbers from 1 to 100. For multiples of 3, print "Fizz".
+    //For multiples of 5, print "Buzz". For multiples of both, print "FizzBuzz".
+    for (int i = 1; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            printf("FizzBuzz\n");
+        }
+        else if (i % 3 == 0) {
+            printf("Fizz\n");
+        }
+        else if (i % 5 == 0) {
+            printf("Buzz\n");
+        }
+        else {
+            printf("%d\n", i);
+        }
+    }
 }
