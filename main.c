@@ -154,7 +154,7 @@ int main()
         return 1;
     }
 
-    // Dynamic memory allocation
+
     arr = (int*)malloc(n * sizeof(int));
 
     if (arr == NULL) {
@@ -166,7 +166,6 @@ int main()
         printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
 
-        // Initialize or update stats
         if (i == 0) {
             min = max = arr[i];
         } else {
