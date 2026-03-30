@@ -142,44 +142,42 @@ int main()
     //     }
     // }
 
-    int n, i;
+    int n, n1, i;
     int *arr;
-    int min, max;
-    long sum = 0;
-    float avg;
 
-    printf("Enter the number of elements: ");
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        printf("Invalid input.\n");
-        return 1;
-    }
-
-
+    printf("How many initial numbers? ");
+    scanf("%d", &n);
     arr = (int*)malloc(n * sizeof(int));
-
-    if (arr == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1;
-    }
 
     for (i = 0; i < n; i++) {
         printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
-
-        if (i == 0) {
-            min = max = arr[i];
-        } else {
-            if (arr[i] < min) min = arr[i];
-            if (arr[i] > max) max = arr[i];
-        }
-        sum += arr[i];
     }
-    avg = (float)sum / n;
 
-    printf("Max: %d\n", max);
-    printf("Min: %d\n", min);
-    printf("Average: %.2f\n", avg);
+    printf("\nHow many additional numbers to add? ");
+    scanf("%d", &n1);
 
+    // Resize the array to hold (n + n1) elements
+    int *temp = realloc(arr, (n + n1) * sizeof(int));
+
+    if (temp == NULL) {
+        printf("Failed to resize memory!\n");
+        free(arr);// Clean up original memory before exiting
+        return 1;
+    }
+    arr = temp; // Update pointer to the new (potentially moved) address
+
+    // 3. Input the new elements
+    for (i = n; i < n + n1; i++) {
+        printf("Enter additional element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    // 4. Verification
+    printf("\nFull Array: ");
+    for (i = 0; i < n + n1; i++) {
+        printf("%d ", arr[i]);
+    }
     free(arr);
 
     return 0;
