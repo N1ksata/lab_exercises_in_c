@@ -127,18 +127,61 @@ int main()
 
     //Write a program that prints numbers from 1 to 100. For multiples of 3, print "Fizz".
     //For multiples of 5, print "Buzz". For multiples of both, print "FizzBuzz".
-    for (int i = 1; i <= 100; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            printf("FizzBuzz\n");
-        }
-        else if (i % 3 == 0) {
-            printf("Fizz\n");
-        }
-        else if (i % 5 == 0) {
-            printf("Buzz\n");
-        }
-        else {
-            printf("%d\n", i);
-        }
+    // for (int i = 1; i <= 100; i++) {
+    //     if (i % 3 == 0 && i % 5 == 0) {
+    //         printf("FizzBuzz\n");
+    //     }
+    //     else if (i % 3 == 0) {
+    //         printf("Fizz\n");
+    //     }
+    //     else if (i % 5 == 0) {
+    //         printf("Buzz\n");
+    //     }
+    //     else {
+    //         printf("%d\n", i);
+    //     }
+    // }
+
+    int n, i;
+    int *arr;
+    int min, max;
+    long sum = 0;
+    float avg;
+
+    printf("Enter the number of elements: ");
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Invalid input.\n");
+        return 1;
     }
+
+    // Dynamic memory allocation
+    arr = (int*)malloc(n * sizeof(int));
+
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+
+        // Initialize or update stats
+        if (i == 0) {
+            min = max = arr[i];
+        } else {
+            if (arr[i] < min) min = arr[i];
+            if (arr[i] > max) max = arr[i];
+        }
+        sum += arr[i];
+    }
+    avg = (float)sum / n;
+
+    printf("Max: %d\n", max);
+    printf("Min: %d\n", min);
+    printf("Average: %.2f\n", avg);
+
+    free(arr);
+
+    return 0;
 }
