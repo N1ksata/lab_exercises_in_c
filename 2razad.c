@@ -35,6 +35,7 @@ int main() {
     vipusk.classes[1].students[0] = (Student){"Petar", 4.80};
     vipusk.classes[1].students[1] = (Student){"Elena", 5.20};
 
+
     double totalSum = 0;
     int totalStudents = 0;
 
@@ -44,6 +45,7 @@ int main() {
             totalStudents++;
         }
     }
+
 
     if (totalStudents > 0) {
         printf("Obsht sreden bal na vipuska: %.2f\n", totalSum / totalStudents);
