@@ -3,4 +3,4 @@ project(lab_exercises C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(lab_exercises 2razad.c)
+add_executable(lab_exercises  2razad.c)

@@ -2,31 +2,54 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int* delete_duplicates_and_shrink(int *arr, int *size) {
-    if (*size == 0) return arr;
+// int* delete_duplicates_and_shrink(int *arr, int *size) {
+//     if (*size == 0) return arr;
+//
+//     int newSize = 0;
+//     for (int i = 0; i < *size; i++) {
+//         bool exists = false;
+//         for (int j = 0; j < newSize; j++) {
+//             if (arr[i] == arr[j]) {
+//                 exists = true;
+//                 break;
+//             }
+//         }
+//
+//         if (!exists) {
+//             arr[newSize] = arr[i];
+//             newSize++;
+//         }
+//     }
+//
+//     *size = newSize;
+//     int *temp = realloc(arr, newSize * sizeof(int));
+//
+//     if (temp == NULL && newSize > 0) {
+//         return arr;
+//     }
+//     return temp;
+// }
 
-    int newSize = 0;
-    for (int i = 0; i < *size; i++) {
-        bool exists = false;
-        for (int j = 0; j < newSize; j++) {
-            if (arr[i] == arr[j]) {
-                exists = true;
-                break;
-            }
-        }
+float AVG(int *arr , int size) {
+    float sum = 0.0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum / size;
+}
 
-        if (!exists) {
-            arr[newSize] = arr[i];
-            newSize++;
-        }
+int* expand(int *arr, int *size, int avg) {
+    int oldSize = *size;
+    int newSize = oldSize + avg;
+
+    int *temp = realloc(arr, newSize * sizeof(int));
+    if (temp == NULL) return arr;
+
+    for (int i = 0; i < avg; i++) {
+        temp[oldSize + i] = temp[i];
     }
 
     *size = newSize;
-    int *temp = realloc(arr, newSize * sizeof(int));
-
-    if (temp == NULL && newSize > 0) {
-        return arr;
-    }
     return temp;
 }
 int main() {
@@ -129,19 +152,47 @@ int main() {
     //     printf("\n");
     // }
 
-    int n;
-    printf("KOLKO elementa?: ");
-    if (scanf("%d", &n) != 1) return 1;
+    // int n;
+    // printf("KOLKO elementa?: ");
+    // if (scanf("%d", &n) != 1) return 1;
+    //
+    // int *arr = malloc(n * sizeof(int));
+    // if (arr == NULL) return 1;
+    //
+    // for (int i = 0; i < n; i++) {
+    //     scanf("%d", &arr[i]);
+    // }
+    //
+    // arr = delete_duplicates_and_shrink(arr, &n);
+    //
+    // for (int i = 0; i < n; i++) {
+    //     printf("%d ", arr[i]);
+    // }
+    // printf("\n");
+    //
+    // free(arr);
 
-    int *arr = malloc(n * sizeof(int));
-    if (arr == NULL) return 1;
+    //dynamic array
+    //zad1  sredna stoinost AVG-> func
+    //dobawqme AVG broi elements kato kopirame ot nachaloto na masiva-> func
+    int n = 5;
+    int * arr = malloc(n * sizeof(int));
 
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    arr[3] = 4;
+    arr[4] = 5;
 
-    arr = delete_duplicates_and_shrink(arr, &n);
+    int avg = AVG(arr, n);
+    printf("AVG: %d\n", avg);
 
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]); //arr-a go printwam
+    printf("\n");
+
+    arr = expand(arr, &n, avg);
+
+    printf("after the func!!!!\n");
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
@@ -149,5 +200,4 @@ int main() {
 
     free(arr);
     return 0;
-
 }
