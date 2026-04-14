@@ -2,6 +2,41 @@
 #include <stdbool.h>
 #include <sys/signal.h>
 
+void reverse(int arr[], int size) {
+    int start = 0;
+    int end = size - 1;
+    int temp;
+
+    while (start < end) {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        start++;
+        end--;
+    }
+}
+
+
+
+int check_duplicates(int *arr, int size,int target) {
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            return true;
+        }
+    }
+    return false;
+}
+void delete_duplicates(int *arr, int size) {
+    int countForDelete = 0;
+    for (int i = 0; i < size - 1; i++) {
+        if (true == check_duplicates(arr[i+1] ,size - i , arr[i])) {
+            countForDelete++;
+            delete_duplicates(arr[i],size - countForDelete - i);
+        }
+    }
+}
 
 int main() {
     // int n;
@@ -48,54 +83,54 @@ int main() {
     //zad2
 
     //zad3
-    int n;
-    int m;
-
-    printf("Rows?");
-    scanf("%d", &n);
-    printf("Columns?");
-    scanf("%d", &m);
-    int matrix[n][m];
-    for (int i =0 ; i < n ; i++) {
-        for (int j =0 ; j < m ; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-    int  max = matrix[0][0];
-    int  min = matrix[0][0];
-    int minrow = 0;
-    int maxrow = 0;
+    // int n;
+    // int m;
+    //
+    // printf("Rows?");
+    // scanf("%d", &n);
+    // printf("Columns?");
+    // scanf("%d", &m);
+    // int matrix[n][m];
+    // for (int i =0 ; i < n ; i++) {
+    //     for (int j =0 ; j < m ; j++) {
+    //         scanf("%d", &matrix[i][j]);
+    //     }
+    // }
+    // int  max = matrix[0][0];
+    // int  min = matrix[0][0];
+    // int minrow = 0;
+    // int maxrow = 0;
 
     //find max num
-    for (int i =0 ; i < n ; i++) {
-        for (int j =0 ; j < m ; j++) {
-            if (matrix[i][j] > max) {
-                max = matrix[i][j];
-                maxrow = i;
-            }
-        }
-    }
+    // for (int i =0 ; i < n ; i++) {
+    //     for (int j =0 ; j < m ; j++) {
+    //         if (matrix[i][j] > max) {
+    //             max = matrix[i][j];
+    //             maxrow = i;
+    //         }
+    //     }
+    // }
 
     //find min num
-    for (int i =0 ; i < n ; i++) {
-        for (int j =0 ; j < m ; j++) {
-            if (matrix[i][j] < min) {
-                min = matrix[i][j];
-                minrow = i;
-            }
-        }
-    }
-    printf("%d\n", max);
-    printf("%d\n", min);
-
-
-    if (maxrow != minrow) {
-        for (int j = 0; j < m; j++) {
-            int temp = matrix[maxrow][j];
-            matrix[maxrow][j] = matrix[minrow][j];
-            matrix[minrow][j] = temp;
-        }
-    }
+    // for (int i =0 ; i < n ; i++) {
+    //     for (int j =0 ; j < m ; j++) {
+    //         if (matrix[i][j] < min) {
+    //             min = matrix[i][j];
+    //             minrow = i;
+    //         }
+    //     }
+    // }
+    // printf("%d\n", max);
+    // printf("%d\n", min);
+    //
+    //
+    // if (maxrow != minrow) {
+    //     for (int j = 0; j < m; j++) {
+    //         int temp = matrix[maxrow][j];
+    //         matrix[maxrow][j] = matrix[minrow][j];
+    //         matrix[minrow][j] = temp;
+    //     }
+    // }
     // for (int i =0 ; i < n ; i++) {
     //     for (int j =0 ; j < m ; j++) {
     //         printf("%d ", matrix[i][j]);
@@ -103,6 +138,8 @@ int main() {
     //     printf("\n");
     // }
     //printing the matrix
+
+
 
     return 0;
 }
