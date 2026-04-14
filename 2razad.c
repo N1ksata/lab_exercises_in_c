@@ -1,43 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
-#include <sys/signal.h>
 
-void reverse(int arr[], int size) {
-    int start = 0;
-    int end = size - 1;
-    int temp;
+int* delete_duplicates_and_shrink(int *arr, int *size) {
+    if (*size == 0) return arr;
 
-    while (start < end) {
-        temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+    int newSize = 0;
+    for (int i = 0; i < *size; i++) {
+        bool exists = false;
+        for (int j = 0; j < newSize; j++) {
+            if (arr[i] == arr[j]) {
+                exists = true;
+                break;
+            }
+        }
 
-        start++;
-        end--;
-    }
-}
-
-
-
-int check_duplicates(int *arr, int size,int target) {
-
-    for (int i = 0; i < size; i++) {
-        if (arr[i] == target) {
-            return true;
+        if (!exists) {
+            arr[newSize] = arr[i];
+            newSize++;
         }
     }
-    return false;
-}
-void delete_duplicates(int *arr, int size) {
-    int countForDelete = 0;
-    for (int i = 0; i < size - 1; i++) {
-        if (true == check_duplicates(arr[i+1] ,size - i , arr[i])) {
-            countForDelete++;
-            delete_duplicates(arr[i],size - countForDelete - i);
-        }
-    }
-}
 
+    *size = newSize;
+    int *temp = realloc(arr, newSize * sizeof(int));
+
+    if (temp == NULL && newSize > 0) {
+        return arr;
+    }
+    return temp;
+}
 int main() {
     // int n;
     // int m;
@@ -137,11 +128,26 @@ int main() {
     //     }
     //     printf("\n");
     // }
-    //printing the matrix
 
+    int n;
+    printf("KOLKO elementa?: ");
+    if (scanf("%d", &n) != 1) return 1;
 
+    int *arr = malloc(n * sizeof(int));
+    if (arr == NULL) return 1;
 
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
 
+    arr = delete_duplicates_and_shrink(arr, &n);
 
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    free(arr);
     return 0;
+
 }
