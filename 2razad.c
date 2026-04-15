@@ -30,28 +30,28 @@
 //     return temp;
 // }
 
-float AVG(int *arr , int size) {
-    float sum = 0.0;
-    for (int i = 0; i < size; i++) {
-        sum += arr[i];
-    }
-    return sum / size;
-}
-
-int* expand(int *arr, int *size, int avg) {
-    int oldSize = *size;
-    int newSize = oldSize + avg;
-
-    int *temp = realloc(arr, newSize * sizeof(int));
-    if (temp == NULL) return arr;
-
-    for (int i = 0; i < avg; i++) {
-        temp[oldSize + i] = temp[i];
-    }
-
-    *size = newSize;
-    return temp;
-}
+// float AVG(int *arr , int size) {
+//     float sum = 0.0;
+//     for (int i = 0; i < size; i++) {
+//         sum += arr[i];
+//     }
+//     return sum / size;
+// }
+//
+// int* expand(int *arr, int *size, int avg) {
+//     int oldSize = *size;
+//     int newSize = oldSize + avg;
+//
+//     int *temp = realloc(arr, newSize * sizeof(int));
+//     if (temp == NULL) return arr;
+//
+//     for (int i = 0; i < avg; i++) {
+//         temp[oldSize + i] = temp[i];
+//     }
+//
+//     *size = newSize;
+//     return temp;
+// }
 int main() {
     // int n;
     // int m;
@@ -175,29 +175,82 @@ int main() {
     //dynamic array
     //zad1  sredna stoinost AVG-> func
     //dobawqme AVG broi elements kato kopirame ot nachaloto na masiva-> func
-    int n = 5;
-    int * arr = malloc(n * sizeof(int));
+    // int n = 5;
+    // int * arr = malloc(n * sizeof(int));
+    //
+    // arr[0] = 1;
+    // arr[1] = 2;
+    // arr[2] = 3;
+    // arr[3] = 4;
+    // arr[4] = 5;
+    //
+    // int avg = AVG(arr, n);
+    // printf("AVG: %d\n", avg);
+    //
+    // for (int i = 0; i < n; i++) printf("%d ", arr[i]); //arr-a go printwam
+    // printf("\n");
+    //
+    // arr = expand(arr, &n, avg);
+    //
+    // printf("after the func!!!!\n");
+    // for (int i = 0; i < n; i++) {
+    //     printf("%d ", arr[i]);
+    // }
+    // printf("\n");
+    //
+    // free(arr);
 
-    arr[0] = 1;
-    arr[1] = 2;
-    arr[2] = 3;
-    arr[3] = 4;
-    arr[4] = 5;
-
-    int avg = AVG(arr, n);
-    printf("AVG: %d\n", avg);
-
-    for (int i = 0; i < n; i++) printf("%d ", arr[i]); //arr-a go printwam
-    printf("\n");
-
-    arr = expand(arr, &n, avg);
-
-    printf("after the func!!!!\n");
+    //BPE seminarno - 15.04 5,6,8 dynnamic ,statichni dvumerni
+    //zad1
+    int n;
+    int m;
+    bool isValid = true;
+    printf("ROWS?");
+    scanf("%d", &n);
+    printf("COLUMNS?");
+    scanf("%d", &m);
+    int arr[n][m];
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &arr[i][j]);
+        }
     }
-    printf("\n");
 
-    free(arr);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i =0; i < n  ; i++) {
+        for (int j =0; j< m - 1 ;j++) {
+            if (arr[i][j] > arr[i][j+1]) {
+                printf("1");
+                isValid = false;
+                break;
+            }
+            if (!isValid) break;
+        }
+    }
+
+    for (int j = 0; j < m; j++) {
+        for (int i =0; j< n - 1 ;i++) {
+            if (arr[i][j] > arr[i+1][j]) {
+                printf("2");
+                isValid = false;
+                break;
+            }
+            if (!isValid) break;
+        }
+    }
+
+    if (isValid) {
+        printf("Valid");
+    }
+    else {
+        printf("Invalid");
+    }
+
     return 0;
 }
