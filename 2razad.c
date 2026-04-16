@@ -227,16 +227,39 @@ int main() {
     //     printf("Invalid");
     // }
 
-    int *p;
+    //1st exercise from the net
+    // int *p;
+    //
+    // p = (int *)malloc(sizeof(int));
+    // if (p == NULL) {
+    //     return 1; //greshka
+    // }
+    //
+    // *p = 42;
+    // printf("Chisloto v dinamichna pamet e %d\n", *p);
+    // free(p);
 
-    p = (int *)malloc(sizeof(int));
-    if (p == NULL) {
-        return 1; //greshka
+    //2nd exercise from the net
+
+    int n;
+    printf("How many nums in dynamic arr?");
+    scanf("%d", &n);
+
+    int *arr = (int *)malloc(n * sizeof(int));
+    if (arr == NULL) {
+        printf("Error allocating memory");
+    }
+    for (int i = 0; i < n; i++) {
+        arr[i] = i + 1;
+        scanf("%d", &arr[i]);
     }
 
-    *p = 42;
-    printf("Chisloto v dinamichna pamet e %d\n", *p);
-    free(p);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    free(arr);
+
+
 
     return 0;
 }
