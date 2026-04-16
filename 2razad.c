@@ -97,80 +97,54 @@ int main() {
     //zad2
 
     //zad3
-    // int n;
-    // int m;
+    //  int n;
+    //  int m;
     //
-    // printf("Rows?");
-    // scanf("%d", &n);
-    // printf("Columns?");
-    // scanf("%d", &m);
-    // int matrix[n][m];
-    // for (int i =0 ; i < n ; i++) {
-    //     for (int j =0 ; j < m ; j++) {
-    //         scanf("%d", &matrix[i][j]);
-    //     }
-    // }
-    // int  max = matrix[0][0];
-    // int  min = matrix[0][0];
-    // int minrow = 0;
-    // int maxrow = 0;
-
-    //find max num
-    // for (int i =0 ; i < n ; i++) {
-    //     for (int j =0 ; j < m ; j++) {
-    //         if (matrix[i][j] > max) {
-    //             max = matrix[i][j];
-    //             maxrow = i;
-    //         }
-    //     }
-    // }
-
-    //find min num
-    // for (int i =0 ; i < n ; i++) {
-    //     for (int j =0 ; j < m ; j++) {
-    //         if (matrix[i][j] < min) {
-    //             min = matrix[i][j];
-    //             minrow = i;
-    //         }
-    //     }
-    // }
-    // printf("%d\n", max);
-    // printf("%d\n", min);
+    //  printf("Rows?");
+    //  scanf("%d", &n);
+    //  printf("Columns?");
+    //  scanf("%d", &m);
+    //  int matrix[n][m];
+    //  for (int i =0 ; i < n ; i++) {
+    //      for (int j =0 ; j < m ; j++) {
+    //          scanf("%d", &matrix[i][j]);
+    //      }
+    //  }
+    //  int  max = matrix[0][0];
+    //  int  min = matrix[0][0];
+    //  int minrow = 0;
+    //  int maxrow = 0;
+    //
+    // // find max num
+    //  for (int i =0 ; i < n ; i++) {
+    //      for (int j =0 ; j < m ; j++) {
+    //          if (matrix[i][j] > max) {
+    //              max = matrix[i][j];
+    //              maxrow = i;
+    //          }
+    //      }
+    //  }
+    //
+    // // find min num
+    //  for (int i =0 ; i < n ; i++) {
+    //      for (int j =0 ; j < m ; j++) {
+    //          if (matrix[i][j] < min) {
+    //              min = matrix[i][j];
+    //              minrow = i;
+    //          }
+    //      }
+    //  }
+    //  printf("%d\n", max);
+    //  printf("%d\n", min);
     //
     //
-    // if (maxrow != minrow) {
-    //     for (int j = 0; j < m; j++) {
-    //         int temp = matrix[maxrow][j];
-    //         matrix[maxrow][j] = matrix[minrow][j];
-    //         matrix[minrow][j] = temp;
-    //     }
-    // }
-    // for (int i =0 ; i < n ; i++) {
-    //     for (int j =0 ; j < m ; j++) {
-    //         printf("%d ", matrix[i][j]);
-    //     }
-    //     printf("\n");
-    // }
-
-    // int n;
-    // printf("KOLKO elementa?: ");
-    // if (scanf("%d", &n) != 1) return 1;
-    //
-    // int *arr = malloc(n * sizeof(int));
-    // if (arr == NULL) return 1;
-    //
-    // for (int i = 0; i < n; i++) {
-    //     scanf("%d", &arr[i]);
-    // }
-    //
-    // arr = delete_duplicates_and_shrink(arr, &n);
-    //
-    // for (int i = 0; i < n; i++) {
-    //     printf("%d ", arr[i]);
-    // }
-    // printf("\n");
-    //
-    // free(arr);
+    //  if (maxrow != minrow) {
+    //      for (int j = 0; j < m; j++) {
+    //          int temp = matrix[maxrow][j];
+    //          matrix[maxrow][j] = matrix[minrow][j];
+    //          matrix[minrow][j] = temp;
+    //      }
+    //  }
 
     //dynamic array
     //zad1  sredna stoinost AVG-> func
@@ -202,55 +176,67 @@ int main() {
 
     //BPE seminarno - 15.04 5,6,8 dynnamic ,statichni dvumerni
     //zad1
-    int n;
-    int m;
-    bool isValid = true;
-    printf("ROWS?");
-    scanf("%d", &n);
-    printf("COLUMNS?");
-    scanf("%d", &m);
-    int arr[n][m];
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            scanf("%d", &arr[i][j]);
-        }
+    // int n;
+    // int m;
+    // bool isValid = true;
+    // printf("ROWS? ");
+    // scanf("%d", &n);
+    // printf("COLUMNS? ");
+    // scanf("%d", &m);
+    // int arr[n][m];
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < m; j++) {
+    //         printf("arr[%d][%d]", i, j);
+    //         scanf("%d", &arr[i][j]);
+    //     }
+    // }
+    //
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < m; j++) {
+    //         printf("%d ", arr[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+    //
+    // for (int i =0; i < n  ; i++) {
+    //     for (int j =0; j< m - 1 ;j++) {
+    //         if (arr[i][j] > arr[i][j+1]) {
+    //             printf("1");
+    //             isValid = false;
+    //             break;
+    //         }
+    //         if (!isValid) break;
+    //     }
+    // }
+    //
+    // for (int j = 0; j < m; j++) {
+    //     for (int i =0; j< n - 1 ;i++) {
+    //         if (arr[i][j] > arr[i+1][j]) {
+    //             printf("2");
+    //             isValid = false;
+    //             break;
+    //         }
+    //         if (!isValid) break;
+    //     }
+    // }
+    //
+    // if (isValid) {
+    //     printf("Valid");
+    // }
+    // else {
+    //     printf("Invalid");
+    // }
+
+    int *p;
+
+    p = (int *)malloc(sizeof(int));
+    if (p == NULL) {
+        return 1; //greshka
     }
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
-
-    for (int i =0; i < n  ; i++) {
-        for (int j =0; j< m - 1 ;j++) {
-            if (arr[i][j] > arr[i][j+1]) {
-                printf("1");
-                isValid = false;
-                break;
-            }
-            if (!isValid) break;
-        }
-    }
-
-    for (int j = 0; j < m; j++) {
-        for (int i =0; j< n - 1 ;i++) {
-            if (arr[i][j] > arr[i+1][j]) {
-                printf("2");
-                isValid = false;
-                break;
-            }
-            if (!isValid) break;
-        }
-    }
-
-    if (isValid) {
-        printf("Valid");
-    }
-    else {
-        printf("Invalid");
-    }
+    *p = 42;
+    printf("Chisloto v dinamichna pamet e %d\n", *p);
+    free(p);
 
     return 0;
 }
