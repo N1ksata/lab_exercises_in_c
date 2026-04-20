@@ -241,23 +241,23 @@ int main() {
 
     //2nd exercise from the net
 
-    int n;
-    printf("How many nums in dynamic arr?");
-    scanf("%d", &n);
-
-    int *arr = (int *)malloc(n * sizeof(int));
-    if (arr == NULL) {
-        printf("Error allocating memory");
-    }
-    for (int i = 0; i < n; i++) {
-        arr[i] = i + 1;
-        scanf("%d", &arr[i]);
-    }
-
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    free(arr);
+    // int n;
+    // printf("How many nums in dynamic arr?");
+    // scanf("%d", &n);
+    //
+    // int *arr = (int *)malloc(n * sizeof(int));
+    // if (arr == NULL) {
+    //     printf("Error allocating memory");
+    // }
+    // for (int i = 0; i < n; i++) {
+    //     arr[i] = i + 1;
+    //     scanf("%d", &arr[i]);
+    // }
+    //
+    // for (int i = 0; i < n; i++) {
+    //     printf("%d ", arr[i]);
+    // }
+    // free(arr);
 
 
 
