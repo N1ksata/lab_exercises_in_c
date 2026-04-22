@@ -13,7 +13,6 @@ struct Inventory
         int dishes;
         double total_cost;
     };
-
 int main() {
 
     //zad bpe 5to 1,2,5,6
