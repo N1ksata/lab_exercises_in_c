@@ -6,6 +6,7 @@
 
 int main() {
 
+
     FILE *t_out = fopen("chislo.txt", "w");
     fprintf(t_out, "123");
     fclose(t_out);
